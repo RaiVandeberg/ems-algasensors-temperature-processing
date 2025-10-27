@@ -2,6 +2,8 @@ package com.algaworks.algasensors.temperature.processing;
 
 
 
+import com.algaworks.algasensors.temperature.processing.common.UUIDv7Utils;
+import com.algaworks.algasensors.temperature.processing.common.IdGenerator;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +15,7 @@ import java.util.UUID;
 public class UUIDv7Teste {
     @Test
     void shouldGenerateUUDv7(){
-        UUID uuid = idGenerator.generateTimeBasedUUID();
+        UUID uuid = IdGenerator.generateTimeBasedUUID();
         OffsetDateTime uuidDateTime = UUIDv7Utils.extractOffsetDateTime(uuid).truncatedTo(ChronoUnit.MINUTES);
         OffsetDateTime currentDateTime = OffsetDateTime.now().truncatedTo(ChronoUnit.MINUTES);
 
